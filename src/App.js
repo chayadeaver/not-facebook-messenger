@@ -5,7 +5,10 @@ import Message from './Message';
 
 function App() {
   const [input, setInput] = useState("")
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState([
+    {username: "sonny", text: "hey guys"}, 
+    {username: "qazi", text: "whats up"}
+  ])
   const [username, setUsername] = useState("")
 
   useEffect(() => {
@@ -14,7 +17,9 @@ function App() {
 
   const sendMessage = (e) => {
     e.preventDefault()
-    setMessages([...messages, input])
+    setMessages([
+      ...messages, { username: username, text: input }
+    ])
     setInput("")
   }
 
@@ -24,23 +29,16 @@ function App() {
       <h2>Welcome {username} </h2>
 
       <form>
-
-      <FormControl>
-        <InputLabel>Enter a message...</InputLabel>
-        <Input value={input} onChange={e => setInput(e.target.value)}/>
-        <Button disabled={!input} variant="contained" color="primary" type="submit" onClick={sendMessage}>Send Message</Button>
-      </FormControl>
-        
+        <FormControl>
+          <InputLabel>Enter a message...</InputLabel>
+          <Input value={input} onChange={e => setInput(e.target.value)}/>
+          <Button disabled={!input} variant="contained" color="primary" type="submit" onClick={sendMessage}>Send Message</Button>
+        </FormControl>
       </form>
-      
-      {/* input */}
-      {/* button */}
 
-      {/* messages themselves */}
       {
-        messages.map((message, i) => (
-          <Message text={message} />
-
+        messages.map((message) => (
+          <Message username={username} message={message} />
         ))
       }
     </div>
