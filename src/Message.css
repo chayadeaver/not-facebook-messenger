@@ -12,6 +12,7 @@
 
 .message__userCard {
     background-color: #c507ff !important;
+    color: white !important;
 }
 
 .message__guestCard {
