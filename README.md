@@ -1,8 +1,8 @@
-<!-- ![slack-clone-demo](public/slack-clone.gif)
+![!facebook-messenger-demo](public/fb-messenger-clone.gif)
 
-[Demo](https://www.loom.com/share/c92b2007b73543caaf7858046d3092cf)
+[Demo](https://youtu.be/LtQsjwbvn1c)
 
-[Deployed App](https://slack-clone-d89af.web.app) -->
+[Deployed App](https://not-facebook-messenger.firebaseapp.com/)
 
 ## Features
 * Uses React to render a simple messenger application where multiple users can post messages 
